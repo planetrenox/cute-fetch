@@ -3,15 +3,14 @@
  */
 
 const fch = (url) => ({
-    post: async (data) =>
+    post: async (object) =>
     {
         try {
-            const response = await fetch(url, {
+            return await fetch(url, {
                 method: 'POST', headers: {
                     'Content-Type': 'application/json',
-                }, body: JSON.stringify(data),
+                }, body: JSON.stringify(object),
             });
-            return await response.json();
         }
         catch (error) {
             console.error("POST request error:", error);
