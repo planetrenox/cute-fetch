@@ -1,22 +1,39 @@
-/**
- * Enhanced fetch wrapper to support fch('<url>').post({<body>}) usage pattern.
- */
-
 const fch = (url) => ({
-    post: async (object) =>
-    {
-        try {
-            return await fetch(url, {
-                method: 'POST', headers: {
-                    'Content-Type': 'application/json',
-                }, body: JSON.stringify(object),
-            });
-        }
-        catch (error) {
-            console.error("POST request error:", error);
-            throw error;
-        }
-    }
+    POST: async (data) => fetch(url, {
+        method: 'POST',
+        headers: {
+            'Content-Type': typeof data === 'object' ? 'application/json' : 'text/plain',
+        },
+        body: typeof data === 'object' ? JSON.stringify(data) : data,
+    }),
+
+    PUT: async (data) => fetch(url, {
+        method: 'PUT',
+        headers: {
+            'Content-Type': typeof data === 'object' ? 'application/json' : 'text/plain',
+        },
+        body: typeof data === 'object' ? JSON.stringify(data) : data,
+    }),
+
+    SOFTWRITE: async (data) => fetch(url, {
+        method: 'SOFTWRITE',
+        headers: {
+            'Content-Type': typeof data === 'object' ? 'application/json' : 'text/plain',
+        },
+        body: typeof data === 'object' ? JSON.stringify(data) : data,
+    }),
+
+    OVERWRITE: async (data) => fetch(url, {
+        method: 'OVERWRITE',
+        headers: {
+            'Content-Type': typeof data === 'object' ? 'application/json' : 'text/plain',
+        },
+        body: typeof data === 'object' ? JSON.stringify(data) : data,
+    }),
+
+    DELETE: async () => fetch(url, { method: 'DELETE' }),
+
+    GET: async () => fetch(url, { method: 'GET' }),
 });
 
 export default fch;

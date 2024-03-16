@@ -1,22 +1,20 @@
 {
   "name": "cute-fetch",
-  "version": "0.1.1",
-  "description": "Experimental piercer stronghold. No tests.",
+  "version": "0.2.0",
+  "description": "fetch wrapper but it's modular..",
   "type": "module",
   "main": "src/index.js",
   "bin": {
     "cute-fetch": "src/cli.js"
   },
   "scripts": {
-    "postinstall": "echo ''",
     "test": "node ./src/test.js",
     "cli": "node ./src/cli.js"
   },
   "exports": "./src/index.js",
   "keywords": [
-    "cute"
+    "cute", "fetch", "fch", "http"
   ],
-  "author": "",
-  "license": "CC-BY-4.0",
-  "homepage": ""
+  "author": "planetrenox",
+  "license": "CC-BY-4.0"
 }
