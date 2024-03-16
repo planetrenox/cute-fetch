@@ -1,6 +1,6 @@
 {
   "name": "cute-fetch",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "fetch wrapper but it's modular..",
   "type": "module",
   "main": "src/index.js",

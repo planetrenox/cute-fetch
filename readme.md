@@ -1,3 +1,5 @@
+**(FYI: I'm a  junior software dev looking for a job in the US. [email](mailto:planetrenox@protonmail.com))**
+
 # cute-fetch
 
 fetch wrapper but it's modular.
